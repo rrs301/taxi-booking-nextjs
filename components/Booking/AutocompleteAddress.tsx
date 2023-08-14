@@ -92,7 +92,7 @@ function AutocompleteAddress() {
             <div className='shadow-md p-1 rounded-md
             absolute w-full bg-white z-20'>
             {addressList?.suggestions.map((item:any,index:number)=>(
-                <h2 className='p-3 hover:bg-gray-100
+                <h2 key={index} className='p-3 hover:bg-gray-100
                 cursor-pointer'
                 onClick={()=>{onSourceAddressClick(item)}}
                 >{item.full_address}</h2>
@@ -114,7 +114,7 @@ function AutocompleteAddress() {
             <div className='shadow-md p-1 rounded-md
             absolute w-full bg-white'>
             {addressList?.suggestions.map((item:any,index:number)=>(
-                <h2 className='p-3 hover:bg-gray-100
+                <h2 key={index} className='p-3 hover:bg-gray-100
                 cursor-pointer'
                 onClick={()=>{
                     onDestinationAddressClick(item)}}

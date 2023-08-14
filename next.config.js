@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     unoptimized: true,
-    swcMinify:false
+    swcMinify:true
 }
 
 module.exports = nextConfig
