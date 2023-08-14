@@ -7,9 +7,9 @@ function Cards() {
   return (
     <div>
         <h2 className='text-[14px] font-medium'>Payment Methods</h2>
-        <div className='grid grid-cols-5 mt-2 pl-2'>
+        <div className='grid grid-cols-5 md:grid-cols-4  lg:grid-cols-5 mt-2 pl-2'>
             {CardsList.map((item,index)=>(
-                <div key={index} className={`w-[50px] border-[1px]
+                <div key={index} className={`w-[50px] mb-1 border-[1px]
                 flex items-center
                  justify-center 
                  rounded-md

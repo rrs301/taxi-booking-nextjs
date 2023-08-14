@@ -1,9 +1,17 @@
+import { DirectionDataContext } from '@/context/DirectionDataContext';
 import CarsList from '@/data/CarsList'
 import Image from 'next/image'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 
 function Cars() {
     const [selectedCar,setSelectedCar]=useState<any>()
+    const {directionData, setDirectionData} 
+    = useContext(DirectionDataContext);
+
+    const getCost=(charges:any)=>{
+      return (charges*directionData.routes[0].distance*0.000621371192)
+      .toFixed(2)
+    }
   return (
     <div className='mt-3'>
         <h2 className='font-medium text-[14px] '>Select Car</h2>
@@ -27,8 +35,12 @@ function Cars() {
                     height={90}
                     className='w-full'
                     />
-                    <h2 className='text-[12px] text-gray-500'>{item.name}
-                    <span className='float-right font-medium text-black'>{item.charges*8} $</span></h2>
+                    <h2 className='text-[10px] text-gray-500'>{item.name}
+                   {directionData.routes?
+                    <span className='float-right font-medium
+                     text-black'>
+                      {getCost(item.charges)} 
+                     $</span>:null}</h2>
                 </div>
             ))}
         </div>

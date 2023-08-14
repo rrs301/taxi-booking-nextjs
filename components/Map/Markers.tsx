@@ -16,23 +16,27 @@ function Markers() {
   return (
     <div>
         {/* User Marker  */}
-             <Marker 
+             {/* <Marker 
                 longitude={userLocation?.lng} 
                 latitude={userLocation?.lat} 
                 anchor="bottom" >
                  <img src="./pin.png" 
                  className='w-10 h-10'
                  />
-                </Marker>
+                </Marker> */}
 
                 {/* Source marker  */}
              {soruceCordinates.length!=0? <Marker 
                 longitude={soruceCordinates?.lng} 
                 latitude={soruceCordinates?.lat} 
                 anchor="bottom" >
-                 <img src="./pin.png" 
+                
+                 
+                  <img src="./location.png" 
                  className='w-10 h-10'
                  />
+                
+                 
                 </Marker>:null}
 
 
@@ -42,7 +46,7 @@ function Markers() {
                 longitude={destinationCordinates?.lng} 
                 latitude={destinationCordinates?.lat} 
                 anchor="bottom" >
-                 <img src="./pin.png" 
+                  <img src="./location.png" 
                  className='w-10 h-10'
                  />
                 </Marker>:null}
